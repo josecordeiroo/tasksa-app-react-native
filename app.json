@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "tasksa-app-react-native",
+    "slug": "tasksa-app-react-native",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
