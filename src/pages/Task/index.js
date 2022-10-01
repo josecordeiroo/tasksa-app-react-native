@@ -36,7 +36,7 @@ export default function Task({ navigation }) {
   };
 
   const deleteTask = async (id) => {
-    await deleteDoc(doc(tasksRef, "id", id));
+    await deleteDoc(tasksRef, id);
   };
 
   return (
@@ -52,7 +52,7 @@ export default function Task({ navigation }) {
               <TouchableOpacity
                 style={styles.deleteTask}
                 onPress={() => {
-                  deleteTask(item.id);
+                  deleteTask(item.item.id);
                 }}
               >
                 <FontAwesome
@@ -65,8 +65,8 @@ export default function Task({ navigation }) {
                 style={styles.descriptionTask}
                 onPress={() =>
                   navigation.navigate("Details", {
-                    id: item.id,
-                    description: item.text,
+                    id: item.item.id,
+                    description: item.item.text,
                   })
                 }
               >
@@ -76,11 +76,6 @@ export default function Task({ navigation }) {
           );
         }}
       />
-
-      {/* {tasks &&
-        tasks.map((task, index) => {
-          return <Text>{task.text}</Text>;
-        })} */}
 
       <TouchableOpacity
         style={styles.buttonNewTask}
@@ -92,4 +87,5 @@ export default function Task({ navigation }) {
   );
 }
 
-//
+//<TextInput placeholder="teste"/>
+//<Button title="teste" onPress={() => sendTask()}/>

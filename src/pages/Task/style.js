@@ -26,8 +26,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginBottom: 5,
         marginRight: 15,
-        color: "#181818",
-        fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif"
+        color: "#4B4B4B",
     },
     buttonNewTask: {
         width: 60,
