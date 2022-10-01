@@ -39,13 +39,13 @@ export default function Task({ navigation }) {
   };
 
   useEffect(() => {
-     const b = onSnapshot(db, (querySnapshot) => {
-      const list = []
+    const b = onSnapshot(db, (querySnapshot) => {
+      const list = [];
       querySnapshot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
         // console.log(list)
       });
-      setTask(list)
+      setTask(list);
     });
   }, []); // a culpa de tudo era porque coloquei esse cara no lugar errado.................
 
@@ -100,12 +100,7 @@ export default function Task({ navigation }) {
 // const QueryTasks = query(tasksRef);
 // const [tasks] = useCollectionData(QueryTasks);
 
-// const sendTask = async () => {
-//   await addDoc(tasksRef, {
-//     text: "MAAAAAAAAIS UM!",
-//     createdAt: serverTimestamp(),
-//   });
-// };
+
 
 //<TextInput placeholder="teste"/>
 //<Button title="teste" onPress={() => sendTask()}/>
