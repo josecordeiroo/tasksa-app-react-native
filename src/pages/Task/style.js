@@ -22,8 +22,10 @@ const styles = StyleSheet.create({
         color: "#ffffff",
         fontSize: 30,
         fontWeight: "bold",
-
     },
+    test: {
+        color: "black"
+    }
     
 })
 
