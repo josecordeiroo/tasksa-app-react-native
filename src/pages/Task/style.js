@@ -7,6 +7,28 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         color: "black"
     },
+    Tasks: {
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 5
+    },
+    deleteTask: {
+        justifyContent: "center",
+        paddingLeft: 15,
+    },
+    descriptionTask: {
+        width: "75%",
+        alignContent: "flex-start",
+        backgroundColor: "#EAEAEA",
+        padding: 12,
+        paddingHorizontal: 20,
+        borderRadius: 50,
+        marginBottom: 5,
+        marginRight: 15,
+        color: "#181818",
+        fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif"
+    },
     buttonNewTask: {
         width: 60,
         height: 60,
