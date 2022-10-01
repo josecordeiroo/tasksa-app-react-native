@@ -30,26 +30,28 @@ import { FontAwesome } from "@expo/vector-icons";
 import styles from "./style";
 
 export default function Task({ navigation }) {
-  const [task, setTask] = useState([]);
   const db = query(collection(databaseApp, "Tasks"));
+  const [task, setTask] = useState([]);
 
+  //delete items on firebase
   const deleteTask = async (id) => {
     await deleteDoc(doc(db, id));
   };
 
-  //fetch all docs from database on firebase and put in const task
   useEffect(() => {
-    onSnapshot(db, (querySnapshot) => {
-      const list = [];
+     const b = onSnapshot(db, (querySnapshot) => {
+      const list = []
       querySnapshot.forEach((doc) => {
         list.push({ ...doc.data(), id: doc.id });
+        // console.log(list)
       });
-      setTask(list);
+      setTask(list)
     });
-  });
+  }, []); // a culpa de tudo era porque coloquei esse cara no lugar errado.................
 
   return (
     <View style={styles.container}>
+      {console.log(task)}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={task}
