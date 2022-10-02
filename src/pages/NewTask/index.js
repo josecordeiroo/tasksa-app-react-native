@@ -25,7 +25,7 @@ export default function NewTask({ navigation }) {
       status: false,
       createdAt: serverTimestamp(),
     });
-    navigation.navigate("Task")
+    navigation.navigate("Lista de Tarefas")
   };
 
   return (

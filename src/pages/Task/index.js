@@ -51,7 +51,7 @@ export default function Task({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {console.log(task)}
+      {/* {console.log(task)} */}
       <FlatList
         showsVerticalScrollIndicator={false}
         data={task}
@@ -73,9 +73,10 @@ export default function Task({ navigation }) {
               <Text
                 style={styles.descriptionTask}
                 onPress={() =>
-                  navigation.navigate("Details", {
+                  navigation.navigate("Editar", {
                     id: item.item.id,
                     description: item.item.text,
+                    createdAt: item.item.createdAt
                   })
                 }
               >
@@ -88,7 +89,7 @@ export default function Task({ navigation }) {
 
       <TouchableOpacity
         style={styles.buttonNewTask}
-        onPress={() => navigation.navigate("NewTask")}
+        onPress={() => navigation.navigate("Criar")}
       >
         <Text style={styles.iconButton}>+</Text>
       </TouchableOpacity>

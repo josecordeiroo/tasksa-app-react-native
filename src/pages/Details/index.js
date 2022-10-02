@@ -14,20 +14,26 @@ import {
   setDoc,
   deleteDoc,
   onSnapshot,
+  Timestamp,
 } from "firebase/firestore";
 
-export default function Details ({navigation, route}) {
+export default function Details({ navigation, route }) {
   const db = query(collection(databaseApp, "Tasks"));
 
-  const [descriptionEdit, setDescriptionEdit] = useState(route.params.description)
-  const idTask = route.params.id
+  const [descriptionEdit, setDescriptionEdit] = useState(
+    route.params.description
+  );
+  const idTask = route.params.id;
+  const createdAt = route.params.createdAt
 
   const editTask = async () => {
     await setDoc(doc(db, idTask), {
       text: descriptionEdit,
+      status: false,
+      createdAt: createdAt,
       updatedAt: serverTimestamp(),
     });
-    navigation.navigate("Task")
+    navigation.navigate("Lista de Tarefas");
   };
 
   return (
@@ -39,10 +45,7 @@ export default function Details ({navigation, route}) {
         value={descriptionEdit}
         onChangeText={setDescriptionEdit}
       />
-      <TouchableOpacity
-        style={styles.buttonNewTask}
-        onPress={() => editTask()}
-      >
+      <TouchableOpacity style={styles.buttonNewTask} onPress={() => editTask()}>
         <Text style={styles.iconButton}>Salvar</Text>
       </TouchableOpacity>
     </View>

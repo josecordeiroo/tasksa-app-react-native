@@ -14,17 +14,17 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Task">
         <Stack.Screen
-          name="Task"
+          name="Lista de Tarefas"
           component={Task}
           options={{ headerTintColor: "#f92e6a" }}
         />
         <Stack.Screen
-          name="NewTask"
+          name="Criar"
           component={NewTask}
           options={{ headerTintColor: "#f92e6a" }}
         />
         <Stack.Screen
-          name="Details"
+          name="Editar"
           component={Details}
           options={{ headerTintColor: "#f92e6a" }}
         />
